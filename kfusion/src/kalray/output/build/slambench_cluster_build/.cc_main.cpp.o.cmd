@@ -1,0 +1,1 @@
+cmd_output/build/slambench_cluster_build/cc_main.cpp.o := /home/accesscore/files/2.0.0-eng2-rc7/install/usr/local/k1tools/bin/k1-g++ -Wp,-MD,output/build/slambench_cluster_build/.cc_main.cpp.o.d -Wp,-MT,output/build/slambench_cluster_build/cc_main.cpp.o -mcore=k1dp -mboard=developer     -mos=nodeos   -c -o output/build/slambench_cluster_build/cc_main.cpp.o cc_main.cpp
