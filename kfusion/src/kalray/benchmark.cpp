@@ -124,6 +124,7 @@ int main(int argc, char ** argv) {
 	//  =========  BASIC BUFFERS  (input / output )  =========
 
 	// Construction Scene reader and input buffer
+    //
 	uint16_t* inputDepth = (uint16_t*) malloc(
 			sizeof(uint16_t) * inputSize.x * inputSize.y);
 	uchar4* depthRender = (uchar4*) malloc(
@@ -209,10 +210,12 @@ int main(int argc, char ** argv) {
 
 	//  =========  FREE BASIC BUFFERS  =========
 
+/*
 	free(inputDepth);
 	free(depthRender);
 	free(trackRender);
 	free(volumeRender);
+*/
 	return 0;
 
 }

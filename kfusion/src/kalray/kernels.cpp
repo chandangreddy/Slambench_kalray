@@ -69,6 +69,10 @@ void Kfusion::languageSpecificConstructor() {
 	if (getenv("KERNEL_TIMINGS"))
 		print_kernel_timing = true;
 
+	size_t gaussianS = radius * 2 + 1;
+    kfusion_global_mem_init(iterations.size(), computationSize.x, computationSize.y, gaussianS);
+
+/*
 	// internal buffers to initialize
 	reductionoutput = (float*) calloc(sizeof(float) * 8 * 32, 1);
 
@@ -97,9 +101,9 @@ void Kfusion::languageSpecificConstructor() {
 	trackingResult = (TrackData*) calloc(
 			sizeof(TrackData) * computationSize.x * computationSize.y, 1);
 
+*/
 	// ********* BEGIN : Generate the gaussian *************
-	size_t gaussianS = radius * 2 + 1;
-	gaussian = (float*) calloc(gaussianS * sizeof(float), 1);
+	//gaussian = (float*) calloc(gaussianS * sizeof(float), 1);
 	int x;
 	for (unsigned int i = 0; i < gaussianS; i++) {
 		x = i - 2;
@@ -113,6 +117,7 @@ void Kfusion::languageSpecificConstructor() {
 
 Kfusion::~Kfusion() {
 
+/*
 	free(reductionoutput);
 	for (unsigned int i = 0; i < iterations.size(); ++i) {
 		free(ScaledDepth[i]);
@@ -126,6 +131,7 @@ Kfusion::~Kfusion() {
 	free(vertex);
 	free(normal);
 	free(gaussian);
+    */
 
 	volume.release();
 }
